@@ -38,18 +38,21 @@
 
 		////////////////////////////////////////////////////////////////
 
-		function osszeadasFeliras(firstclass, szam1, szam2) {
-			var firstclass = document.querySelector(".eredmeny");
-			var osszeg = Number(szam1) + Number(szam2);
+		function osszeadasFeliras(osztaly, x, y) {
+			var firstnode = document.querySelector(".osztaly");
 
-
-			var p = document.createElement("p");
-			p.textContent = `${szam1} + ${szam2} = ${osszeg}`;
-
-
-			firstclass.appendChild(p);
-			
-		}		
+			if (firstnode) {
+				var bekezdes = document.createElement("p");
+				var szam1 = Number(x);
+				var szam2 = Number(y);
+				var osszeg = szam1 + szam2;
+				bekezdes.appendChild(document.createTextNode(`${szam1} + ${szam2} = ${osszeg}`));
+				firstnode.appendChild(bekezdes);
+			}
+			else {
+				console.log("nincs ilyen class");
+			}
+		};
 
 
 
